@@ -161,35 +161,35 @@ This section explains each SPARQL query used in the `InnovaTrip` ontology projec
 
 #### 1. Get all tourists' names
 - **Query Purpose**: Retrieves all individuals of type `Tourist` and their names using the `foaf:name` property.
-- **Expected Results**: A list of tourists with their associated names.
+- ** Results**: A list of tourists with their associated names.
 
 #### 2. Get all bookings and their prices
 - **Query Purpose**: Retrieves every `Booking` and its corresponding `price`.
-- **Expected Results**: A table with bookings and their associated price values.
+- ** Results**: A table with bookings and their associated price values.
 
 #### 3. Get all reviews with their text
 - **Query Purpose**: Fetches all `Review` instances and displays the written content (`reviewText`).
-- **Expected Results**: A list of reviews and the text written by tourists.
+- ** Results**: A list of reviews and the text written by tourists.
 
 #### 4. Get all media and their URLs
 - **Query Purpose**: Lists all media elements (images, videos, etc.) and their associated URLs.
-- **Expected Results**: A list of media entries with their respective media URLs.
+- ** Results**: A list of media entries with their respective media URLs.
 
 #### 5. Get all transport services and their prices
 - **Query Purpose**: Filters transport services like Bus, Train, Taxi, and CarRental and shows their prices.
-- **Expected Results**: A table with transport types and their prices.
+- ** Results**: A table with transport types and their prices.
 
 #### 6. Get all bookings and their dates
 - **Query Purpose**: Displays each booking and the corresponding date of the reservation.
-- **Expected Results**: A list of bookings along with their booking dates.
+- ** Results**: A list of bookings along with their booking dates.
 
 #### 7. Get all service providers with their ratings
 - **Query Purpose**: Lists all individuals or entities that are `ServiceProvider`s with their given `rating`.
-- **Expected Results**: A table of service providers and how they are rated.
+- ** Results**: A table of service providers and how they are rated.
 
 #### 8. Find tourists who are younger than 30
 - **Query Purpose**: Filters tourists whose `age` is less than 30.
-- **Expected Results**: A list of younger tourists with their age displayed.
+- ** Results**: A list of younger tourists with their age displayed.
 
 ---
 
@@ -197,19 +197,19 @@ This section explains each SPARQL query used in the `InnovaTrip` ontology projec
 
 #### 9. Find service providers with a rating greater than 4
 - **Query Purpose**: Selects highly-rated service providers by applying a filter on `rating`.
-- **Expected Results**: Providers with a rating higher than 4, sorted from highest to lowest.
+- ** Results**: Providers with a rating higher than 4, sorted from highest to lowest.
 
 #### 10. Get the name and nationality of tourists younger than 30 and from French nationality
 - **Query Purpose**: Retrieves `foaf:name` and `nationality` for tourists who are French and under 30 years old.
-- **Expected Results**: A refined list showing French tourists below 30, with their names and nationality.
+- ** Results**: A refined list showing French tourists below 30, with their names and nationality.
 
 #### 11. List all photos with their resolution and the place they describe
 - **Query Purpose**: Displays all `Photo` instances with their `imageResolution` and the `Place` they are linked to via `mediaOf`.
-- **Expected Results**: A list of photos, their resolutions, and the places they represent.
+- ** Results**: A list of photos, their resolutions, and the places they represent.
 
 #### 12. List transport services with a bus or train route and their prices
 - **Query Purpose**: Uses a UNION to gather transport services that either have a `busRoute` or `trainRoute`, showing their route and price.
-- **Expected Results**: Transport options filtered by type (bus or train), with their route and price listed.
+- ** Results**: Transport options filtered by type (bus or train), with their route and price listed.
 
 ---
 

@@ -1,7 +1,7 @@
 
 ## 📊 SPARQL Queries for InnovaTrip Ontology
 
-This document contains both **simple** and **complex** SPARQL queries based on the `InnovaTrip` ontology.  
+This document contains both **simple** and **complex** SPARQL queries for the `InnovaTrip` ontology.  
 
 ---
 
@@ -14,6 +14,13 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 ---
 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?subject ?object
+	WHERE { ?subject rdfs:subClassOf ?object }
+  
 ## 🟢 Simple SPARQL Queries
 
 ### 1. Get all tourists' names
@@ -57,7 +64,7 @@ WHERE {
 ```sparql
 SELECT ?media ?url
 WHERE {
-  ?media innova:mediaURL ?url .
+  ?media innova:hasMediaURL ?url .
 }
 ```
 
@@ -151,7 +158,7 @@ SELECT ?photo ?place ?resolution
 WHERE {
   ?photo a innova:Photo ;
          innova:imageResolution ?resolution ;
-         innova:mediaOf ?place .
+         ?place innova:mediaOf  .
 }
 ```
 

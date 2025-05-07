@@ -223,7 +223,7 @@ An ontology modeling the tourism domain including tourists, guides, service prov
 ├── Driver                      
 └── Guide                       
 
-Place
+│Place
 ├── Attraction                  
 │   ├── NaturalAttraction      
 │   │   ├── Beach
@@ -235,7 +235,7 @@ Place
 ├── City
 └── Country
 
-Activity
+│Activity
 ├── CulturalActivity
 │   ├── MuseumVisit
 │   └── HeritageTour
@@ -243,25 +243,25 @@ Activity
     ├── Hiking
     └── Diving
 
-Accommodation
+│Accommodation
 ├── Hotel
 ├── Hostel
 └── GuestHouse
 
-Booking
+│Booking
 ├── AccommodationBooking
 ├── ActivityBooking
 
 
-Review
+│Review
 ├── AttractionReview
 ├── AccommodationReview   
 
-Media
+│Media
 ├── Photo
 └── Video
 
-Transport
+│Transport
 ├── Private
 │   ├── Taxi
 │   └── CarRental

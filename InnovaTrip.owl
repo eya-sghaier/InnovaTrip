@@ -1,0 +1,1564 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yassineeya/InnovaTrip#"
+     xml:base="http://www.semanticweb.org/yassineeya/InnovaTrip"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:innova="http://www.semanticweb.org/yassineeya/InnovaTrip#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip">
+        <dc:creator>Eya SGHAIER</dc:creator>
+        <dc:creator>Mohamed Yassine REKIK</dc:creator>
+        <dc:date>2025-04-01</dc:date>
+        <dc:description>
+            An ontology modeling the tourism domain including tourists, guides, service providers, bookings, etc.
+        </dc:description>
+        <dc:title>InnovaTrip Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#bookingMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#bookingMadeBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#guidesActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#guidesActivity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasAttraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasAttraction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasAuthor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#writesReview"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasMedia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasMedia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Media"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#participatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#participatesIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#refersTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#refersTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#reviewedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#reviewsAccommodation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewsAccommodation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#reviewsAttraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewsAttraction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#takesPlaceAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#takesPlaceAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#usedExclusivelyBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#usedExclusivelyBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#usesTransport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#usesTransport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#worksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#worksAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#writesReview -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#writesReview">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#age">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#availableSeats -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#availableSeats">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Taxi"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#busRoute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#busRoute">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Bus"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#capacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#capacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#carModel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#carModel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CarRental"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#companyName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#depthLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#depthLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Diving"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#difficultyLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#difficultyLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Hiking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#exhibitionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#exhibitionType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Museum"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#experienceYears -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#experienceYears">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasBookingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasBookingDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasFacilities -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasFacilities">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasLocation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasMediaURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasMediaURL">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Media"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasName">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#hasOpeningHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#hasOpeningHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#historicalSignificance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#historicalSignificance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#imageResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#imageResolution">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#isPetFriendly -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#isPetFriendly">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#languagesSpoken -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#languagesSpoken">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#nationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#price">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#rating">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#reviewDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#reviewText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#tourType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#tourType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#HeritageTour"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#trainRoute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#trainRoute">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Train"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#videoDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#videoDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationBooking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationBooking">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#refersTo"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationReview -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationReview">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#ActivityBooking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ActivityBooking">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#refersTo"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#AttractionReview -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#AttractionReview">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#reviewedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Beach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Booking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Public"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#CarRental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#CarRental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Private"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Country">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalActivity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#takesPlaceAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Diving -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Diving">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#OutdoorActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Driver">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#worksAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Guide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#guidesActivity"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#worksAt"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#HeritageTour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#HeritageTour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Hiking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Hiking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#OutdoorActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Hostel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Hostel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Accommodation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Media -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Media">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Photo"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Video"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Monument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Monument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#MultilingualProvider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#MultilingualProvider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Museum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#MuseumVisit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#MuseumVisit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Attraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#OutdoorActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#OutdoorActivity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#takesPlaceAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#NaturalAttraction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#PetLoverTourist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#PetLoverTourist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Photo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Place">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Private -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Private">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#usedExclusivelyBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Public"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Public -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Public">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Review -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Review">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#SatisfiedTourist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#SatisfiedTourist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#SeniorGuide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#SeniorGuide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Taxi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Taxi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Private"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Train -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Train">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Public"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach"/>
+        <hasFacilities>food,drinks,swimsuitsRenting</hasFacilities>
+        <hasName>Blue Lagoon</hasName>
+        <hasOpeningHours>8AM</hasOpeningHours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#City1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#City1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#City"/>
+        <hasAttraction rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1"/>
+        <hasName>Sfax</hasName>
+        <historicalSignificance>Very Old and changed for years</historicalSignificance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Country1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Country1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Country"/>
+        <hasName>Tunisia</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse"/>
+        <hasName>Guest House Yasmine</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Monument1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Monument1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Monument"/>
+        <hasName>Mountain Everest</hasName>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain"/>
+        <hasName>Historic City Center</hasName>
+        <hasOpeningHours>9AM</hasOpeningHours>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#Museum1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Museum1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Museum"/>
+        <exhibitionType>Show Day</exhibitionType>
+        <hasName>Historic City Center</hasName>
+        <hasOpeningHours>11AM</hasOpeningHours>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub"/>
+        <hasName>TransportHub Matar</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Hotel"/>
+        <reviewedBy rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist1"/>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</capacity>
+        <hasLocation>Beachfront</hasLocation>
+        <hasName>Sunrise Hotel</hasName>
+        <isPetFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPetFriendly>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Hostel"/>
+        <reviewedBy rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist1"/>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000000</capacity>
+        <hasLocation>Mountain</hasLocation>
+        <hasName>Mountain View Resort</hasName>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#accommodationBooking1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodationBooking1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationBooking"/>
+        <refersTo rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation1"/>
+        <hasBookingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">15-11-2020</hasBookingDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#activity1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#activity1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Hiking"/>
+        <takesPlaceAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#City1"/>
+        <takesPlaceAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Country1"/>
+        <takesPlaceAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain1"/>
+        <difficultyLevel>not for kids defenitely hard but a guided hiking tour.</difficultyLevel>
+        <hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT4H</hasDuration>
+        <hasName>Mountain Hiking</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#activity2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#activity2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Diving"/>
+        <depthLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</depthLevel>
+        <hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT3H</hasDuration>
+        <hasName>Diving</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#activity3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#activity3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#MuseumVisit"/>
+        <hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT4H</hasDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#activity4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#activity4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#HeritageTour"/>
+        <tourType>Extended Equiped</tourType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#attractionBooking1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#attractionBooking1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ActivityBooking"/>
+        <refersTo rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1"/>
+        <hasBookingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">15-11-2020</hasBookingDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#booking1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#booking1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+        <hasBookingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-04-15</hasBookingDate>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#booking2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#booking2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Booking"/>
+        <hasBookingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-04-16</hasBookingDate>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#bus1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#bus1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Bus"/>
+        <busRoute>Route A</busRoute>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#carRental1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#carRental1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#CarRental"/>
+        <usedExclusivelyBy rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist1"/>
+        <carModel>Toyota Corolla</carModel>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#driver1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#driver1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <companyName>Sunshine Travels</companyName>
+        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#driver2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#driver2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#ServiceProvider"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#TransportHub1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <companyName>Mountain Adventures</companyName>
+        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#guide1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#guide1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+        <guidesActivity rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#activity1"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Museum1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <experienceYears rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</experienceYears>
+        <languagesSpoken>English, French, Korean, Japanese, Arabic</languagesSpoken>
+        <foaf:name>eva</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#guide2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#guide2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+        <guidesActivity rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#activity2"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <experienceYears rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</experienceYears>
+        <languagesSpoken>French, Italian</languagesSpoken>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#media1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#media1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Photo"/>
+        <hasMediaURL>http://PHOTO1</hasMediaURL>
+        <imageResolution>200.0</imageResolution>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#media2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#media2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Video"/>
+        <hasMediaURL>http://Mountain-Adventure</hasMediaURL>
+        <videoDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT2H30M</videoDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#review1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#review1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#AttractionReview"/>
+        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</rating>
+        <reviewDate>15-11-2020</reviewDate>
+        <reviewText>The experiance was amazing, great location!</reviewText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#review2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#review2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#AccommodationReview"/>
+        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</rating>
+        <reviewDate>18-11-2020</reviewDate>
+        <reviewText>Good service, but the room was a bit small.</reviewText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#taxi1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#taxi1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Taxi"/>
+        <availableSeats rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</availableSeats>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#tourist1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <participatesIn rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#activity1"/>
+        <reviewsAccommodation rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation1"/>
+        <reviewsAttraction rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1"/>
+        <usesTransport rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#train1"/>
+        <writesReview rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#review1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</age>
+        <nationality>French</nationality>
+        <foaf:name>eya</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#tourist2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <participatesIn rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#activity2"/>
+        <reviewsAccommodation rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#accommodation2"/>
+        <reviewsAttraction rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Mountain1"/>
+        <usesTransport rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#taxi1"/>
+        <writesReview rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#review2"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26</age>
+        <nationality>Korean</nationality>
+        <foaf:name>Yassine</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#tourist3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#tourist3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Tourist"/>
+        <reviewsAttraction rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Beach1"/>
+        <usesTransport rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#carRental1"/>
+        <writesReview rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#review1"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</age>
+        <nationality>English</nationality>
+        <foaf:name>eyassin</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yassineeya/InnovaTrip#train1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#train1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Train"/>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</price>
+        <trainRoute>Route B</trainRoute>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#GuestHouse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Hostel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#Hotel"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/yassineeya/InnovaTrip#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#Guide"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#g"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#experienceYears"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#g"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#SeniorGuide"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yassineeya/InnovaTrip#g"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

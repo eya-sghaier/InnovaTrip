@@ -228,7 +228,7 @@ Place
 │   ├── NaturalAttraction      
 │   │   ├── Beach
 │   │   └── Mountain
-│   └── CulturalAttraction     
+│   ├──  CulturalAttraction     
 │       ├── Museum
 │       └── Monument
 ├── TransportHub
@@ -239,7 +239,7 @@ Activity
 ├── CulturalActivity
 │   ├── MuseumVisit
 │   └── HeritageTour
-└── OutdoorActivity
+├──  OutdoorActivity
     ├── Hiking
     └── Diving
 
@@ -265,7 +265,7 @@ Transport
 ├── Private
 │   ├── Taxi
 │   └── CarRental
-└── Public
+├──  Public
     ├── Bus
     └── Train
 

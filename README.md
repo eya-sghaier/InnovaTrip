@@ -43,7 +43,7 @@ An ontology modeling the tourism domain including tourists, guides, service prov
 ---
 ## 🧩 Model Description
 
-### Partie1:
+### Partie1: Version ancienne (Il ya une deuxiéme partie as dessous plus récente)
 
 
 #### 🔷 Main Classes

@@ -102,57 +102,57 @@ An ontology modeling the tourism domain including tourists, guides, service prov
 
 #### 🔷 Main Classes
 
-│ Tourist
+ Tourist
 
-│ ServiceProvider               
-├── Driver                      
-└── Guide                       
+ ServiceProvider               
+    - Driver                      
+    - Guide                       
 
 Place
-├── Attraction                  
-│   ├── NaturalAttraction      
-│   │   ├── Beach
-│   │   └── Mountain
-│   └── CulturalAttraction     
-│       ├── Museum
-│       └── Monument
-├── TransportHub
-├── City
-└── Country
+    - Attraction                  
+        - NaturalAttraction      
+            -Beach
+            - Mountain
+        - CulturalAttraction     
+            -Museum
+            - Monument
+    - TransportHub
+    - City
+    - Country
 
 Activity
-├── CulturalActivity
-│   ├── MuseumVisit
-│   └── HeritageTour
-└── OutdoorActivity
-    ├── Hiking
-    └── Diving
+    - CulturalActivity
+        - MuseumVisit
+        - HeritageTour
+    - OutdoorActivity
+        - Hiking
+        - Diving
 
 Accommodation
-├── Hotel
-├── Hostel
-└── GuestHouse
+    - Hotel
+    - Hostel
+    - GuestHouse
 
 Booking
-├── AccommodationBooking
-├── ActivityBooking
+    - AccommodationBooking
+    - ActivityBooking
 
 
 Review
-├── AttractionReview
-├── AccommodationReview   
+    - AttractionReview
+    - AccommodationReview   
 
 Media
-├── Photo
-└── Video
+    - Photo
+    - Video
 
 Transport
-├── Private
-│   ├── Taxi
-│   └── CarRental
-└── Public
-    ├── Bus
-    └── Train
+    - Private
+        - Taxi
+        - CarRental
+    - Public
+        - Bus
+        - Train
 
 
 #### 🔗 Object Properties
